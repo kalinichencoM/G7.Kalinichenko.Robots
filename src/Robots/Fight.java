@@ -5,7 +5,7 @@ public class Fight {
         do {
             Menu.printFigthMenu(robot_A.getRobotName());
             buttonChar = Menu.getCharFromConsole();
-            if (!Menu.equalsExit_char(exit_char, buttonChar)) {
+            if (Menu.equalsExit_char(exit_char, buttonChar)) {
                 break;
             }
             if (AbstractRobot.isButtonCorrect(AbstractRobot.getListOfButtons() ,buttonChar)) {

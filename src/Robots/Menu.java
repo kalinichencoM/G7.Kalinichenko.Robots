@@ -23,7 +23,7 @@ public class Menu {
     }
 
     public static boolean equalsExit_char(String exit_char, String charFromConsole) {
-        if (charFromConsole != exit_char) {
+        if (charFromConsole.equals(exit_char)) {
             return true;
         }
         return false;

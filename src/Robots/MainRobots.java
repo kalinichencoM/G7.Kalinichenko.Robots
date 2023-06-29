@@ -29,8 +29,8 @@ public class MainRobots {
         String buttonChar = "p";
         do {
 
-            Fight.oneRobotHit(EXIT_CHAR, Robot_1, Robot_2, buttonChar);
-            if (!Menu.equalsExit_char(EXIT_CHAR, buttonChar)) {
+            buttonChar = Fight.oneRobotHit(EXIT_CHAR, Robot_1, Robot_2, buttonChar);
+            if (Menu.equalsExit_char(EXIT_CHAR, buttonChar)) {
                 System.out.println("Was press exit key \"p\"");
                 break;
             }
@@ -41,8 +41,8 @@ public class MainRobots {
             if (minRobotHels == 0) {
                 break;
             }
-            Fight.oneRobotHit(EXIT_CHAR, Robot_2, Robot_1, buttonChar);
-            if (!Menu.equalsExit_char(EXIT_CHAR, buttonChar)) {
+            buttonChar = Fight.oneRobotHit(EXIT_CHAR, Robot_2, Robot_1, buttonChar);
+            if (Menu.equalsExit_char(EXIT_CHAR, buttonChar)) {
                 System.out.println("Was press exit key \"p\"");
                 break;
             }
