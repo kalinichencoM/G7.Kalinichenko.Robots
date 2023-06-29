@@ -6,14 +6,23 @@ public class Menu {
 
     public static String getCharFromConsole() {
         Scanner scannerString = new Scanner(System.in);
-        String scannerChar = scannerString.nextLine().trim().toLowerCase();
-        //  System.out.println(scannerChar);
-        if (scannerChar.length() > 1) {
-            System.out.println("The key is too long work first char = " + scannerChar.substring(0, 1));
-            scannerChar = scannerChar.substring(0, 1);
-        }
+        String scannerChar;
+
+do {
+     scannerChar = scannerString.nextLine().trim().toLowerCase();
+    if (scannerChar.length() > 1) {
+        System.out.println("The key is too long work first char = " + scannerChar.substring(0, 1));
+        scannerChar = scannerChar.substring(0, 1);
+        break;
+    } else if (scannerChar.length() == 0) {
+        System.out.println("The key is too short try again");
+        continue;
+    }
+    return scannerChar;
+}while (scannerChar == "");
         return scannerChar;
     }
+
 
     public static void printFigthMenu(String robot) {
         System.out.println("");
@@ -28,7 +37,6 @@ public class Menu {
         }
         return false;
     }
-
 
 
     public static boolean isButtonUsed(String buttonFromConsole, AbstractRobot robot) {

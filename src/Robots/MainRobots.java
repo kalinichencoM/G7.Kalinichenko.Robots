@@ -55,7 +55,7 @@ public class MainRobots {
             if (minRobotHels == 0) {
                 break;
             }
-        } while (minRobotHels == 0);
+        } while (minRobotHels != 0);
 
     }
 
