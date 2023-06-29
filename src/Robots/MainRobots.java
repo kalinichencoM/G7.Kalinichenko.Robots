@@ -32,6 +32,7 @@ public class MainRobots {
             buttonChar = Fight.oneRobotHit(EXIT_CHAR, Robot_1, Robot_2, buttonChar);
             if (Menu.equalsExit_char(EXIT_CHAR, buttonChar)) {
                 System.out.println("Was press exit key \"p\"");
+                Menu.printRobotsHealth(Robot_1, Robot_2);
                 break;
             }
             if (Robot_1.getRobotHels() < minRobotHels) {
@@ -44,6 +45,7 @@ public class MainRobots {
             buttonChar = Fight.oneRobotHit(EXIT_CHAR, Robot_2, Robot_1, buttonChar);
             if (Menu.equalsExit_char(EXIT_CHAR, buttonChar)) {
                 System.out.println("Was press exit key \"p\"");
+                Menu.printRobotsHealth(Robot_1, Robot_2);
                 break;
             }
             if (Robot_1.getRobotHels() < minRobotHels) {
@@ -53,7 +55,7 @@ public class MainRobots {
             if (minRobotHels == 0) {
                 break;
             }
-        } while (minRobotHels != 0);
+        } while (minRobotHels == 0);
 
     }
 
