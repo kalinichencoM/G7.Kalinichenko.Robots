@@ -77,4 +77,12 @@ do {
             System.out.println("------------");
         }
     }
+    public static boolean isButtonExit (String buttonFromConsole, String exit_char, AbstractRobot robot_1, AbstractRobot robot_2) {
+        if (Menu.equalsExit_char(exit_char, buttonFromConsole)) {
+            System.out.println("Was press exit key \"p\"");
+            Menu.printRobotsHealth(robot_1, robot_2);
+            return true;
+        }
+        return false;
+    }
 }

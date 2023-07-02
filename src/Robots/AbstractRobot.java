@@ -74,7 +74,7 @@ abstract public class AbstractRobot {
     }
 
 
-    public static String RobotName(String robot) {
+    public static String robotName(String robot) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter name of " + robot + ":");
         String scannerString = scanner.nextLine();

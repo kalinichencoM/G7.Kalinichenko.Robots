@@ -20,38 +20,34 @@ package Robots;/*Завдання на екзаменаційний проект
 
 public class MainRobots {
     public static void main(String[] args) {
-        AbstractRobot Robot_1 = new AbstractRobot(AbstractRobot.RobotName("Robot_1")) {
+        AbstractRobot robot_1 = new AbstractRobot(AbstractRobot.robotName("robot_1")) {
         };
-        AbstractRobot Robot_2 = new AbstractRobot(AbstractRobot.RobotName("Robot_2")) {
+        AbstractRobot robot_2 = new AbstractRobot(AbstractRobot.robotName("robot_2")) {
         };
         final String EXIT_CHAR = new String("p");
-        int minRobotHels = Robot_1.getRobotHels();
+        int minRobotHels = robot_1.getRobotHels();
         String buttonChar = "p";
         do {
 
-            buttonChar = Fight.oneRobotHit(EXIT_CHAR, Robot_1, Robot_2, buttonChar);
-            if (Menu.equalsExit_char(EXIT_CHAR, buttonChar)) {
-                System.out.println("Was press exit key \"p\"");
-                Menu.printRobotsHealth(Robot_1, Robot_2);
+            buttonChar = Fight.oneRobotHit(EXIT_CHAR, robot_1, robot_2, buttonChar);
+            if (Menu.isButtonExit(buttonChar, EXIT_CHAR,robot_1,robot_2)) {
                 break;
             }
-            if (Robot_1.getRobotHels() < minRobotHels) {
-                minRobotHels = Robot_1.getRobotHels();
+            if (robot_1.getRobotHels() < minRobotHels) {
+                minRobotHels = robot_1.getRobotHels();
             }
-            Menu.printRobotsHealth(Robot_1, Robot_2);
+            Menu.printRobotsHealth(robot_1, robot_2);
             if (minRobotHels == 0) {
                 break;
             }
-            buttonChar = Fight.oneRobotHit(EXIT_CHAR, Robot_2, Robot_1, buttonChar);
-            if (Menu.equalsExit_char(EXIT_CHAR, buttonChar)) {
-                System.out.println("Was press exit key \"p\"");
-                Menu.printRobotsHealth(Robot_1, Robot_2);
+            buttonChar = Fight.oneRobotHit(EXIT_CHAR, robot_2, robot_1, buttonChar);
+            if (Menu.isButtonExit(buttonChar, EXIT_CHAR,robot_1,robot_2)) {
                 break;
             }
-            if (Robot_1.getRobotHels() < minRobotHels) {
-                minRobotHels = Robot_1.getRobotHels();
+            if (robot_1.getRobotHels() < minRobotHels) {
+                minRobotHels = robot_2.getRobotHels();
             }
-            Menu.printRobotsHealth(Robot_1, Robot_2);
+            Menu.printRobotsHealth(robot_1, robot_2);
             if (minRobotHels == 0) {
                 break;
             }
