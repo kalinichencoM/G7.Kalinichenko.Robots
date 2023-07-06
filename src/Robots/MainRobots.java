@@ -30,23 +30,23 @@ public class MainRobots {
         do {
 
             buttonChar = Fight.oneRobotHit(EXIT_CHAR, robot_1, robot_2, buttonChar);
-            if (Menu.isButtonExit(buttonChar, EXIT_CHAR, robot_1, robot_2)) {
+            if (robot_1.isButtonExit(buttonChar, EXIT_CHAR, robot_1, robot_2)) {
                 break;
             }
             if (robot_1.getRobotHels() < minRobotHels) {
                 minRobotHels = robot_1.getRobotHels();
             }
-            if (Menu.isRobotHes0(robot_1,robot_2,minRobotHels)) {
+            if (Menu.isRobotHes0(robot_1, robot_2, minRobotHels)) {
                 break;
             }
             buttonChar = Fight.oneRobotHit(EXIT_CHAR, robot_2, robot_1, buttonChar);
-            if (Menu.isButtonExit(buttonChar, EXIT_CHAR, robot_1, robot_2)) {
+            if (robot_2.isButtonExit(buttonChar, EXIT_CHAR, robot_1, robot_2)) {
                 break;
             }
             if (robot_2.getRobotHels() < minRobotHels) {
                 minRobotHels = robot_2.getRobotHels();
             }
-            if (Menu.isRobotHes0(robot_1,robot_2,minRobotHels)) {
+            if (Menu.isRobotHes0(robot_1, robot_2, minRobotHels)) {
                 break;
             }
         } while (minRobotHels != 0);
