@@ -4,25 +4,6 @@ import java.util.Scanner;
 
 public class Menu {
 
-    public static String getCharFromConsole() {
-        Scanner scannerString = new Scanner(System.in);
-        String scannerChar;
-
-        do {
-            scannerChar = scannerString.nextLine().trim().toLowerCase();
-            if (scannerChar.length() > 1) {
-                System.out.println("The key is too long work first char = " + scannerChar.substring(0, 1));
-                scannerChar = scannerChar.substring(0, 1);
-                break;
-            } else if (scannerChar.length() == 0) {
-                System.out.println("The key is too short try again");
-                continue;
-            }
-            return scannerChar;
-        } while (scannerChar == "");
-        return scannerChar;
-    }
-
 
     public static void printFigthMenu(String robot) {
         System.out.println("");
@@ -38,26 +19,6 @@ public class Menu {
         return false;
     }
 
-
-    public static boolean isButtonUsed(String buttonFromConsole, AbstractRobot robot) {
-        for (int i = 0; i < robot.getNotUsedKeys().length(); i++) {
-            if (buttonFromConsole.charAt(0) == robot.getNotUsedKeys().charAt(i)) {
-                return true;
-            }
-        }
-        System.out.println(buttonFromConsole + " - Key is not active");
-        return false;
-    }
-
-    public static boolean isButtonBoom(String buttonFromConsole, AbstractRobot robot) {
-        for (int i = 0; i < robot.getListNotBoomKey().length(); i++) {
-            if (robot.getListNotBoomKey().charAt(i) == buttonFromConsole.charAt(0)) {
-                return false;
-            }
-        }
-        return true;
-
-    }
 
     public static void printRobotsHealth(AbstractRobot robot_1, AbstractRobot robot_2) {
         if (robot_1.getRobotHels() == 0) {
@@ -78,14 +39,6 @@ public class Menu {
         }
     }
 
-    public static boolean isButtonExit(String buttonFromConsole, String exit_char, AbstractRobot robot_1, AbstractRobot robot_2) {
-        if (Menu.equalsExit_char(exit_char, buttonFromConsole)) {
-            System.out.println("Was press exit key \"p\"");
-            Menu.printRobotsHealth(robot_1, robot_2);
-            return true;
-        }
-        return false;
-    }
 
     public static boolean isRobotHes0(AbstractRobot robot_1, AbstractRobot robot_2, int minRobotHelth) {
         if (minRobotHelth == 0) {
